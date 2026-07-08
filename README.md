@@ -6,7 +6,7 @@
     <title>Dr. Prashanth BusiReddyGari - Faculty Portfolio</title>
     
     <!-- GOOGLE SITE VERIFICATION METHOD -->
-    <meta name="google-site-verification" content="2d024357d8de502d" />
+   <meta name="google-site-verification" content="OtPq1XwRecoUKgBjYsPepRIoAKwKqLdaNiTHOiU2Ufk" />
 
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
