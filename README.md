@@ -1,77 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Prashanth BusiReddyGari - Faculty Portfolio</title>
-    
-    <!-- GOOGLE SITE VERIFICATION METHOD -->
-   <meta name="google-site-verification" content="OtPq1XwRecoUKgBjYsPepRIoAKwKqLdaNiTHOiU2Ufk" />
+# Faculty Portfolio - Dr. Prashanth BusiReddyGari
 
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
-        h1 { color: #002855; border-bottom: 2px solid #002855; padding-bottom: 10px; }
-        h2 { color: #002855; margin-top: 30px; }
-        .contact-info { background: #f4f6f9; padding: 15px; border-radius: 5px; margin: 20px 0; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 8px; }
-    </style>
+This repository contains the deployment files for the academic portfolio site of Dr. Prashanth BusiReddyGari, Assistant Professor of Computer Science at the University of North Carolina at Pembroke.
 
-    <!-- KNOWLEDGE GRAPH STRUCTURED DATA SCHEMA -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "@id": "https://uncp.edu",
-      "name": "Prashanth BusiReddyGari",
-      "givenName": "Prashanth",
-      "familyName": "BusiReddyGari",
-      "alternateName": ["Prashanth Busi Reddy Gari", "P. BusiReddyGari"],
-      "jobTitle": "Assistant Professor of Computer Science",
-      "worksFor": {
-        "@type": "CollegeOrUniversity",
-        "name": "University of North Carolina at Pembroke",
-        "url": "https://uncp.edu"
-      },
-      "department": {
-        "@type": "Organization",
-        "name": "Department of Mathematics and Computer Science"
-      },
-      "telephone": "+1-910-521-6415",
-      "email": "mailto:prashanth.busireddygari@uncp.edu",
-      "knowsAbout": ["Computer Science", "Cybersecurity", "Artificial Intelligence", "Large Language Models", "AI Safety", "Machine Learning Robustness", "Lightweight Cryptography", "Zero-shot Phishing Detection"]
-    }
-    </script>
-</head>
-<body>
 
-    <h1>Dr. Prashanth BusiReddyGari</h1>
-    <p><strong>Assistant Professor of Computer Science</strong> at the University of North Carolina at Pembroke.</p>
+The verified public site is accessible at: https://github.io
 
-    <div class="contact-info">
-        <p><strong>Office:</strong> Oxendine Science Building, Room 1251</p>
-        <p><strong>Phone:</strong> 910-521-6415</p>
-        <p><strong>Email:</strong> prashanth.busireddygari@uncp.edu</p>
-    </div>
 
-    <h2>Primary Research Focus</h2>
-    <ul>
-        <li><strong>AI Safety & Alignment:</strong> Multi-agent system limits and open-weight Large Language Models (LLMs).</li>
-        <li><strong>Cybersecurity:</strong> Deep learning robustness, adversarial prompt injections, and runtime network defenses.</li>
-    </ul>
+- **AI Safety & Alignment:** Limits of open-weight LLMs in multi-agent coordination.
+- **Cybersecurity:** Zero-shot and few-shot phishing URL detection algorithms.
+- **Robustness Frameworks:** PRISM verification for adversarial prompt injections.
 
-    <h2>Selected Research Publications</h2>
-    <ul>
-        <li><em>GRPO Does Not Close the Multi-Agent Coordination Gap</em> (June 2026)</li>
-        <li><em>Benchmarking Large Language Models for Zero-shot and Few-shot Phishing URL Detection</em> (Feb 2026)</li>
-        <li><em>PRISM: A Unified and Generalizable Adversarial Robustness Framework</em> (Nov 2025)</li>
-        <li><em>A Leak-Free Framework for Runtime Anomaly Detection</em> (June 2026)</li>
-        <li><em>Time-Complexity Characterization of the NIST Lightweight Cryptography Finalists</em> (Feb 2026)</li>
-        <li><em>Decoding Neighborhood Environments with Large Language Models</em> (Dec 2024)</li>
-        <li><em>Polymorphic Hashing to Obscure the 1:1 Principle</em> (2024)</li>
-        <li><em>A Lightweight Smart Meter Framework Using a Scalable Blockchain for Smart Cities</em> (2021)</li>
-        <li><em>Pseudorandom Tableau Sequences</em> (2017)</li>
-    </ul>
 
-</body>
-</html>
+This site is mapped with verified JSON-LD structural data mapping schemas directly linked to Google Search Console profiles to establish an authoritative academic Knowledge Graph entity footprint.
