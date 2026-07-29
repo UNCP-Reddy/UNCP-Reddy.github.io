@@ -1,1 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Academic portfolio of a Computer Science and Cybersecurity faculty member, researcher, and program leader." />
+  <title>Dr. Prashanth BusiReddyGari | Cybersecurity & AI Research</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    :root {
+      --bg: #07101f;
+      --bg-2: #0b1629;
+      --panel: rgba(19, 35, 60, 0.72);
+      --panel-solid: #101e35;
+      --text: #f4f7fb;
+      --muted: #a8b5c9;
+      --line: rgba(255, 255, 255, 0.10);
+      --primary: #6d5dfc;
+      --primary-2: #9c7cff;
+      --cyan: #38d9ff;
+      --green: #50e3a4;
+      --gold: #ffd166;
+      --shadow: 0 24px 65px rgba(0, 0, 0, 0.30);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 8%, rgba(109, 93, 252, .21), transparent 28%),
+        radial-gradient(circle at 86% 13%, rgba(56, 217, 255, .13), transparent 25%),
+        linear-gradient(180deg, #07101f 0%, #091426 50%, #07101f 100%);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin-inline: auto;
+    }
+
+    .section { padding: 92px 0; }
+    .section-sm { padding: 65px 0; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--cyan);
+      font-weight: 700;
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      margin-bottom: 14px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 2px;
+      background: currentColor;
+    }
+
+    h1, h2, h3, h4 {
+      margin: 0;
+      font-family: "Space Grotesk", sans-serif;
+      line-height: 1.13;
+      letter-spacing: -.03em;
+    }
+
+    h1 { font-size: clamp(3rem, 7vw, 6.4rem); }
+    h2 { font-size: clamp(2rem, 4vw, 3.6rem); }
+    h3 { font-size: 1.25rem; }
+    p { margin: 0; color: var(--muted); }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #fff, var(--cyan), var(--primary-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* Navigation */
+    .nav-wrap {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 1000;
+      background: rgba(7, 16, 31, .76);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      font-size: 1.15rem;
+    }
+
+    .brand-mark {
+      width: 41px;
+      height: 41px;
+      display: grid;
+      place-items: center;
+      border-radius: 13px;
+      background: linear-gradient(135deg, var(--primary), var(--cyan));
+      box-shadow: 0 9px 28px rgba(109, 93, 252, .36);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      font-size: .92rem;
+      color: #cbd5e4;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover { color: #fff; }
+
+    .nav-cta {
+      padding: 10px 17px;
+      border-radius: 999px;
+      border: 1px solid rgba(109, 93, 252, .7);
+      background: rgba(109, 93, 252, .12);
+      color: #fff;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      color: #fff;
+      background: transparent;
+      font-size: 1.35rem;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      padding: 150px 0 85px;
+      display: grid;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.18fr .82fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .hero-role {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.035);
+      border-radius: 999px;
+      color: #cbd5e4;
+      margin-bottom: 25px;
+      font-size: .88rem;
+    }
+
+    .hero-role span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 14px var(--green);
+    }
+
+    .hero h1 { max-width: 800px; }
+
+    .hero-description {
+      font-size: clamp(1.02rem, 1.5vw, 1.22rem);
+      max-width: 700px;
+      margin: 27px 0 33px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      min-height: 50px;
+      padding: 0 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: .95rem;
+      transition: .25s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), #7e70ff);
+      box-shadow: 0 14px 38px rgba(109, 93, 252, .28);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.035);
+    }
+
+    .btn:hover { transform: translateY(-3px); }
+
+    .hero-card {
+      position: relative;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: linear-gradient(145deg, rgba(255,255,255,.07), rgba(255,255,255,.015));
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+    }
+
+    .portrait {
+      aspect-ratio: 4/5;
+      border-radius: 21px;
+      overflow: hidden;
+      background:
+        linear-gradient(145deg, rgba(109,93,252,.38), rgba(56,217,255,.10)),
+        url('profile-photo.jpg') center/cover;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.12);
+    }
+
+    .portrait-placeholder {
+      text-align: center;
+      padding: 28px;
+      color: rgba(255,255,255,.76);
+    }
+
+    .portrait-placeholder i {
+      font-size: 5rem;
+      margin-bottom: 18px;
+      opacity: .76;
+    }
+
+    .floating-card {
+      position: absolute;
+      left: -50px;
+      bottom: 38px;
+      width: 235px;
+      padding: 17px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: rgba(11, 22, 41, .93);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(16px);
+    }
+
+    .floating-card strong { display: block; font-size: 1.1rem; }
+    .floating-card small { color: var(--muted); }
+
+    .social-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .social-row a {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      color: #dfe7f3;
+    }
+
+    .social-row a:hover { background: var(--primary); border-color: transparent; }
+
+    /* Shared cards */
+    .section-heading {
+      max-width: 780px;
+      margin-bottom: 42px;
+    }
+
+    .section-heading p { margin-top: 18px; font-size: 1.05rem; }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      padding: 27px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+      transition: .25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(109, 93, 252, .48);
+      box-shadow: 0 20px 50px rgba(0,0,0,.2);
+    }
+
+    .icon-box {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      margin-bottom: 21px;
+      font-size: 1.15rem;
+      background: rgba(109, 93, 252, .14);
+      color: var(--primary-2);
+      border: 1px solid rgba(109, 93, 252, .22);
+    }
+
+    .card p { margin-top: 12px; }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .tag {
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: .76rem;
+      font-weight: 700;
+      color: #cbd6e7;
+      background: rgba(255,255,255,.055);
+      border: 1px solid var(--line);
+    }
+
+    /* Metrics */
+    .metrics {
+      border-block: 1px solid var(--line);
+      background: rgba(255,255,255,.018);
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .metric {
+      padding: 42px 20px;
+      text-align: center;
+      border-right: 1px solid var(--line);
+    }
+
+    .metric:last-child { border-right: 0; }
+    .metric strong {
+      display: block;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      color: #fff;
+    }
+    .metric span { color: var(--muted); font-size: .9rem; }
+
+    /* Publications */
+    .publication-list { display: grid; gap: 16px; }
+
+    .publication {
+      display: grid;
+      grid-template-columns: 95px 1fr auto;
+      gap: 22px;
+      align-items: center;
+      padding: 22px 24px;
+      border-radius: 17px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.025);
+    }
+
+    .pub-year {
+      color: var(--cyan);
+      font-weight: 800;
+      font-family: "Space Grotesk", sans-serif;
+    }
+
+    .publication h3 { font-size: 1.02rem; line-height: 1.45; }
+    .publication p { margin-top: 4px; font-size: .88rem; }
+    .pub-link { color: var(--primary-2); }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: .82fr 1.18fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-visual {
+      padding: 25px;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+      background: linear-gradient(155deg, rgba(109,93,252,.20), rgba(56,217,255,.04));
+    }
+
+    .about-inner {
+      min-height: 480px;
+      border-radius: 20px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      background:
+        linear-gradient(180deg, transparent, rgba(4,10,20,.95)),
+        url('campus-or-lab-photo.jpg') center/cover,
+        #13233c;
+    }
+
+    .about-inner h3 { font-size: 1.65rem; }
+    .about-copy p { margin-top: 17px; }
+
+    .credentials {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 13px;
+      margin-top: 28px;
+    }
+
+    .credential {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      color: #dce5f2;
+      font-size: .9rem;
+      background: rgba(255,255,255,.025);
+    }
+
+    .credential i { color: var(--green); margin-right: 9px; }
+
+    /* Contact */
+    .contact-card {
+      padding: clamp(34px, 7vw, 75px);
+      border-radius: 30px;
+      text-align: center;
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(56,217,255,.16), transparent 31%),
+        radial-gradient(circle at 85% 80%, rgba(109,93,252,.25), transparent 34%),
+        var(--panel-solid);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card p {
+      max-width: 680px;
+      margin: 20px auto 28px;
+      font-size: 1.05rem;
+    }
+
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid, .about-grid { grid-template-columns: 1fr; }
+      .hero-card { max-width: 540px; margin-inline: auto; }
+      .floating-card { left: 20px; }
+      .grid-3 { grid-template-columns: repeat(2, 1fr); }
+      .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+      .metric:nth-child(2) { border-right: 0; }
+      .metric:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+    }
+
+    @media (max-width: 760px) {
+      .nav-links {
+        position: absolute;
+        top: 76px;
+        left: 20px;
+        right: 20px;
+        padding: 20px;
+        border-radius: 16px;
+        border: 1px solid var(--line);
+        background: rgba(7, 16, 31, .97);
+        flex-direction: column;
+        align-items: stretch;
+        display: none;
+      }
+      .nav-links.open { display: flex; }
+      .menu-btn { display: block; }
+      .grid-3, .credentials { grid-template-columns: 1fr; }
+      .publication { grid-template-columns: 1fr; gap: 8px; }
+      .pub-link { margin-top: 5px; }
+      .hero { padding-top: 125px; }
+      .floating-card { position: static; width: auto; margin-top: 16px; }
+      .footer-row { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 520px) {
+      .container { width: min(calc(100% - 26px), var(--max)); }
+      .section { padding: 72px 0; }
+      .metrics-grid { grid-template-columns: 1fr; }
+      .metric { border-right: 0; border-bottom: 1px solid var(--line); }
+      .metric:last-child { border-bottom: 0; }
+      .actions { flex-direction: column; }
+      .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav-wrap">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="brand" href="#home">
+        <span class="brand-mark"><i class="fa-solid fa-shield-halved"></i></span>
+        <span>YOUR NAME</span>
+      </a>
+
+      <button class="menu-btn" aria-label="Open navigation" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <div class="nav-links">
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#leadership">Leadership</a>
+        <a class="nav-cta" href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-role"><span></span> Computer Science · Cybersecurity · Artificial Intelligence</div>
+          <h1>
+            Advancing <span class="gradient-text">Secure and Responsible AI</span>
+          </h1>
+          <p class="hero-description">
+            I am a computer science and cybersecurity educator, researcher, and academic leader working at the intersection of artificial intelligence, multi-agent systems, applied security, and undergraduate research.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="#research">Explore My Research <i class="fa-solid fa-arrow-right"></i></a>
+            <a class="btn btn-outline" href="cv.pdf" target="_blank"><i class="fa-regular fa-file-lines"></i> Download CV</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="portrait">
+            <div class="portrait-placeholder">
+              <i class="fa-regular fa-user"></i>
+              <strong>Replace with profile-photo.jpg</strong>
+              <p>Use a professional portrait in this folder.</p>
+            </div>
+          </div>
+          <div class="floating-card">
+            <strong>Dr. Your Full Name</strong>
+            <small>Assistant Professor of Computer Science<br>Cybersecurity Program Coordinator</small>
+            <div class="social-row">
+              <a href="#" aria-label="Google Scholar"><i class="fa-brands fa-google-scholar"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="mailto:your.email@uncp.edu" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="research">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Research Areas</span>
+          <h2>Research that connects <span class="gradient-text">AI innovation with security</span></h2>
+          <p>My work examines how intelligent systems behave, fail, coordinate, and defend against adversarial threats in realistic environments.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon-box"><i class="fa-solid fa-people-arrows"></i></div>
+            <h3>Multi-Agent AI Safety</h3>
+            <p>Studying coordination failures, emergent behavior, resource contention, oversight, and control in populations of autonomous agents.</p>
+            <div class="tag-row"><span class="tag">DPBench</span><span class="tag">Coordination</span><span class="tag">AI Safety</span></div>
+          </article>
+
+          <article class="card">
+            <div class="icon-box"><i class="fa-solid fa-brain"></i></div>
+            <h3>Interpretable AI</h3>
+            <p>Developing methods to understand model decisions and collective behavior, including mechanistic and system-level interpretations.</p>
+            <div class="tag-row"><span class="tag">Explainability</span><span class="tag">LLMs</span><span class="tag">Agents</span></div>
+          </article>
+
+          <article class="card">
+            <div class="icon-box"><i class="fa-solid fa-envelope-circle-check"></i></div>
+            <h3>Phishing & Social Engineering</h3>
+            <p>Evaluating large language models for phishing email and URL detection under prompt injection, multilingual, and adversarial conditions.</p>
+            <div class="tag-row"><span class="tag">LLM-PEA</span><span class="tag">PRISM</span><span class="tag">Adversarial ML</span></div>
+          </article>
+
+          <article class="card">
+            <div class="icon-box"><i class="fa-solid fa-server"></i></div>
+            <h3>Systems Security</h3>
+            <p>Building leak-free and reproducible anomaly-detection frameworks for containerized and distributed computing environments.</p>
+            <div class="tag-row"><span class="tag">Containers</span><span class="tag">Anomaly Detection</span><span class="tag">CVE</span></div>
+          </article>
+
+          <article class="card">
+            <div class="icon-box"><i class="fa-solid fa-comments"></i></div>
+            <h3>Harmful Content Detection</h3>
+            <p>Combining staged classification, knowledge-graph retrieval, critic layers, and adversarial normalization for robust moderation.</p>
+            <div class="tag-row"><span class="tag">KG-RAG</span><span class="tag">Robustness</span><span class="tag">NLP</span></div>
+          </article>
+
+          <article class="card">
+            <div class="icon-box"><i class="fa-solid fa-atom"></i></div>
+            <h3>Cryptography & Quantum Security</h3>
+            <p>Exploring privacy-preserving authentication, lightweight cryptography, random sequences, and quantum-assisted security mechanisms.</p>
+            <div class="tag-row"><span class="tag">Privacy</span><span class="tag">LWC</span><span class="tag">Quantum</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="metrics section-sm">
+      <div class="container metrics-grid">
+        <div class="metric"><strong>20+</strong><span>Undergraduate researchers</span></div>
+        <div class="metric"><strong>17</strong><span>Distinct courses taught</span></div>
+        <div class="metric"><strong>$300K+</strong><span>Research funding secured</span></div>
+        <div class="metric"><strong>12+</strong><span>Student coauthors</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Selected Work</span>
+          <h2>Recent publications and <span class="gradient-text">research projects</span></h2>
+          <p>Replace the placeholder links with DOI, IEEE Xplore, arXiv, or project pages.</p>
+        </div>
+
+        <div class="publication-list">
+          <article class="publication">
+            <div class="pub-year">2026 · DSN</div>
+            <div><h3>LLM-PEA: Leveraging Large Language Models Against Phishing Email Attacks</h3><p>Phishing detection, robustness, and practical LLM evaluation.</p></div>
+            <a class="pub-link" href="#" aria-label="Open publication"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </article>
+
+          <article class="publication">
+            <div class="pub-year">2026 · IEEE</div>
+            <div><h3>ThreatVisionAI: A Hybrid CNN–ViT Framework for Image-Based Malware Classification</h3><p>Hybrid deep learning for malware image analysis.</p></div>
+            <a class="pub-link" href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </article>
+
+          <article class="publication">
+            <div class="pub-year">2026 · arXiv</div>
+            <div><h3>DPBench: Large Language Models Struggle with Simultaneous Coordination</h3><p>A benchmark for evaluating multi-agent coordination under resource contention.</p></div>
+            <a class="pub-link" href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </article>
+
+          <article class="publication">
+            <div class="pub-year">2026 · arXiv</div>
+            <div><h3>GRPO Does Not Close the Multi-Agent Coordination Gap</h3><p>An empirical study of reinforcement learning and persistent coordination failure.</p></div>
+            <a class="pub-link" href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </article>
+
+          <article class="publication">
+            <div class="pub-year">2026 · IEEE</div>
+            <div><h3>Time-Complexity Characterization of NIST Lightweight Cryptography Finalists</h3><p>Systematic performance characterization of lightweight cryptographic algorithms.</p></div>
+            <a class="pub-link" href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="teaching">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Teaching & Mentoring</span>
+          <h2>Building pathways from the classroom to <span class="gradient-text">research and careers</span></h2>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="icon-box"><i class="fa-solid fa-chalkboard-user"></i></div>
+            <h3>Cybersecurity Education</h3>
+            <p>Courses include introductory cybersecurity, applied cryptography, operating systems and security, and AI in cybersecurity.</p>
+          </article>
+          <article class="card">
+            <div class="icon-box"><i class="fa-solid fa-code"></i></div>
+            <h3>Computer Science Foundations</h3>
+            <p>Teaching across programming, object-oriented design, artificial intelligence, digital logic, and computer systems.</p>
+          </article>
+          <article class="card">
+            <div class="icon-box"><i class="fa-solid fa-user-graduate"></i></div>
+            <h3>Undergraduate Research</h3>
+            <p>Mentoring students through funded projects, independent research, conference papers, internships, competitions, and capstones.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="leadership">
+      <div class="container about-grid">
+        <div class="about-visual">
+          <div class="about-inner">
+            <span class="eyebrow">Academic Leadership</span>
+            <h3>Cybersecurity program development, national standards, and student opportunity</h3>
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <span class="eyebrow">Profile</span>
+          <h2>Researcher, educator, and <span class="gradient-text">program builder</span></h2>
+          <p>I serve as an Assistant Professor of Computer Science and Cybersecurity Program Coordinator at the University of North Carolina at Pembroke. My work integrates research, education, curriculum development, and institutional leadership.</p>
+          <p>I also support cybersecurity accreditation and designation activities, facilitate external advisory engagement, develop AI-integrated curricula, and expand research-computing opportunities for faculty and students.</p>
+
+          <div class="credentials">
+            <div class="credential"><i class="fa-solid fa-check"></i> NSA CAE-CD Institutional POC</div>
+            <div class="credential"><i class="fa-solid fa-check"></i> ABET Program Evaluator Training</div>
+            <div class="credential"><i class="fa-solid fa-check"></i> NSF Proposal Panelist</div>
+            <div class="credential"><i class="fa-solid fa-check"></i> Cyber Defense Education Center</div>
+            <div class="credential"><i class="fa-solid fa-check"></i> NSF ACCESS Faculty Champion</div>
+            <div class="credential"><i class="fa-solid fa-check"></i> Industry Advisory Board Facilitator</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <span class="eyebrow">Connect</span>
+          <h2>Let’s collaborate on secure, interpretable, and responsible AI.</h2>
+          <p>I welcome research collaborations, student opportunities, invited talks, academic service, and partnerships in cybersecurity and artificial intelligence.</p>
+          <div class="actions" style="justify-content:center">
+            <a class="btn btn-primary" href="mailto:your.email@uncp.edu"><i class="fa-regular fa-envelope"></i> Email Me</a>
+            <a class="btn btn-outline" href="#"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Dr. Your Full Name. All rights reserved.</span>
+      <span>Computer Science · Cybersecurity · AI</span>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.querySelector('.menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', isOpen);
+      menuButton.innerHTML = isOpen
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
