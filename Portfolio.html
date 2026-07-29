@@ -204,6 +204,14 @@
       margin: 27px 0 33px;
     }
 
+    .portrait {
+    position: relative;
+    width: 700px;      /* your desired frame width */
+    height: 900px;     /* your desired frame height */
+    overflow: hidden;
+    border-radius: 20px;
+    }
+
     .profile-center {
     position: absolute;
     top: 50%;
@@ -211,13 +219,13 @@
 
     transform: translate(-50%, -50%);
 
-    width: 100%;
-    height: 100%;
+    width: 85%;        /* adjust to zoom in/out */
+    height: auto;
 
     object-fit: cover;
-    object-position: center center;
-}
+    }
 
+    
     .actions {
       display: flex;
       flex-wrap: wrap;
